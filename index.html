@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>
+            Todo list
+        </title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="load.css">
+    </head>
+    <body onload="loadText()">
+        <div id="container">
+            <header>
+                <a href="#" onclick="localStorage.clear();" id="clear">
+                    Clear all
+                </a>
+                <h1>
+                    Task list
+                </h1>
+            </header>
+            <section>
+                <input type="text" id="input">
+                <input type="button" onclick="addText()" value="Add">
+                <ul id="taskList">
+                    
+                </ul>
+            </section>
+            <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fgrooveyourself.ro%2Fgroove%2Ftodo%2F">
+                valid html
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fgrooveyourself.ro%2Fgroove%2Ftodo%2F">
+                Valid css (warning from base 64 background)
+            </a>
+        </div>
+        <script type="text/javascript" src="todo.js">
+            
+        </script>
+    </body>
+</html>
