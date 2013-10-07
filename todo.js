@@ -36,8 +36,10 @@ function validate(){
   valid = JSON.parse(validator);
   console.log(valid.toBeDone);
   var validate = {"toBeDone":valid.toBeDone,"done":"true, of course"};
+  var notvalid = {"toBeDone":valid.toBeDone,"done":""};
   if (!checked){
   parent_.setAttribute('rel', '');
+  localStorage.setItem(x,JSON.stringify(notvalid));
   return !checked;
   }
   parent_.setAttribute('rel', 'me');
