@@ -22,12 +22,14 @@ h1 {
 }
 
 #image {
-	content:'delete';
 	display:block;
 	float:right;
-	width:10px;
-	height:10px;
-	background-image:url('close.png');
+	width:23px;
+	height:23px;
+	background-image:url('close_button.png');
+	border-radius:50%;
+	box-shadow:0 0 3px #fff;
+	cursor:pointer;
 }
 
 ul {
@@ -38,9 +40,11 @@ ul {
 li {
 	padding:5px;
         -webkit-transition: all 1s ease;
+	-o-transition:all 1s ease;
+	transition:all 1s ease;
 	background:#e74c3c;
 	margin-bottom:3px;
-	font-size:18px;
+	font:18px monospace;
 	color:white;
 }
 li[rel="me"] {
@@ -48,7 +52,7 @@ li[rel="me"] {
 	background:#2ecc71;
 }
 input {
-	max-width:230px;
+	width:100%;
 	text-align:center;
 	font-size:22px;
 	outline: none;	
@@ -56,15 +60,31 @@ input {
 	border:0px solid rgba(255,255,255,0.2);
 	color:#fff;
 	margin:5px 0;
-	padding-left:3px;
-	padding-right:3px;
+	padding-top:5px;
+	padding-bottom:5px;
 }
 input:focus {
  	outline: none;
 	background:#e74c3c;
 }
 input[type="checkbox"] {
+	width:15px;
 	margin-right:5px;
+}
+::-webkit-input-placeholder {
+   color: rgba(255,255,255,0.7);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: rgba(255,255,255,0.7);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(255,255,255,0.7);
+}
+
+:-ms-input-placeholder {  
+   color: rgba(255,255,255,0.7);
 }
 a {
 	text-decoration:none;
