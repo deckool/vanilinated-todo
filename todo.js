@@ -26,10 +26,8 @@ function validate(){
   var checked = frm.checked;
   if (!checked){
   parent_.setAttribute('rel', '');
-  console.log('Please read through the acknowledgement and acknowledge it.');
   return !checked;
   }
-  console.log("whaaat?"+x);
   parent_.setAttribute('rel', 'me');
   return checked;
 }
@@ -44,10 +42,6 @@ function removeElementsByClass(className){
 function loadText(){
 for(var i in window.localStorage){
    val = localStorage.getItem(i);
-   console.log(i+"-------"+val); 
-/*   value = val.split(","); //splitting string inside array to get name
-   name[i] = value[1]; // getting name from split string
-   console.log(i+"------"+value);*/
    dry(i,val);
 }};
 
@@ -55,7 +49,6 @@ function addText(){
     var input = document.getElementById('input').value;
     date = new Date();
     var time = date.getTime();
-/*    console.log(input);*/
     if (input !== "") {
         localStorage.setItem(time,input);      
         dry(time,input);
