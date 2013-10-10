@@ -30,7 +30,6 @@ function validate(){
 	var x = this.className;
 	var frm = document.getElementById('theDo'+x);
 	var parent_ = document.getElementById('theDo'+x).parentNode;
-	console.log(x);
 	var checked = frm.checked;
 	if (!checked){		
 		var scores = localStorage.getItem("highscores");
@@ -66,27 +65,21 @@ function removeElementsByClass(className){
 
 function loadText(){
 		var scores = localStorage.getItem("highscores");
-		console.log(scores);
 		scores = JSON.parse(scores);
 		for (i=0;i<scores.length;i++){
 			dry(scores[i].time,scores[i].toBeDone,scores[i].done);
-			console.log(scores);
-			console.log(scores[i].toBeDone + " finished in " + scores[i].time);
 	}
 }
 function addText(){
 	var input = document.getElementById('input').value;
-	console.log(localStorage);
     if (input !== "") {
 	var scores = localStorage.getItem("highscores");
-	console.log(scores);
 	scores = JSON.parse(scores);
 	date = new Date();
 	var inputStore = {};
 		inputStore.time = date.getTime();
 		inputStore.toBeDone = input;
 		inputStore.done = "";
-	console.log(typeof inputStore);
 	scores.push(inputStore);
 	localStorage.setItem("highscores", JSON.stringify(scores));
         dry(inputStore.time,input,"");
@@ -98,7 +91,6 @@ function toSplice(a){
 	scores = JSON.parse(scores);
 	scores.splice(a,1);
 	localStorage.setItem("highscores",JSON.stringify(scores));
-	console.log(a+"Spliced");
 }
 function removeText(){
 	var remove = this.className;
@@ -106,13 +98,11 @@ function removeText(){
 	scores = JSON.parse(scores);
 	for (i=0;i<scores.length;i++){
 		var zzz = parseInt(remove);
-		console.log(typeof scores[i].time);
-		console.log(typeof zzz);
 			if (zzz === scores[i].time){
 				toSplice(i);
 				removeElementsByClass(zzz.toString());
 }else{
-	console.log("bleah");
+	console.log("");
 }
 	}
 }
@@ -127,7 +117,6 @@ function setLocalStorage(){
 	} else {
 		var highscores = [];
 		localStorage.setItem("highscores",JSON.stringify(highscores));
-		console.log("set");
 }} else {
-console.log("tralala");
+	console.log("tralala");
 }}
