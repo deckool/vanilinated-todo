@@ -13,7 +13,7 @@ draw = docTypeHtml $ do
         H.meta H.! A.httpEquiv "Content-Type" H.! A.content "text/html;charset=UTF-8"
         link H.! A.rel "stylesheet" H.! A.href "http://fonts.googleapis.com/css?family=Megrim" H.! A.type_ "text/css"
         H.link H.! A.rel "stylesheet" H.! A.href "load.css"
-    H.body H.! A.onload "loadText()" $ do
+    H.body H.! A.onload "setLocalStorage()" $ do
         H.div H.! A.id "container" $ do
             H.header $ do
                 H.a H.! A.href "#" H.! A.onclick "localStorage.clear();" H.! A.id "clear" $ "Clear all"
