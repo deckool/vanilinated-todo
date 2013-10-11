@@ -23,12 +23,20 @@ h1 {
 }
 
 #image {
+	opacity: 0;
+}
+li:hover #image{
 	display:block;
+	opacity:1;
 	float:right;
 	width:22px;
 	height:22px;
-	background-image:url('WindowsCloseButtonBlack.png');
+	background-image:url('close.png');
 	cursor:pointer;
+	transition: opacity .2s ease-in;
+	-moz-transition: opacity .2s ease-in;
+	-webkit-transition: opacity .2s ease-in;
+	-o-transition: opacity .2s ease-in;
 }
 
 ul {
@@ -106,8 +114,8 @@ a {
 }
 .check label {
 	display: block;
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	border-radius: 100px;
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease;
@@ -116,8 +124,8 @@ a {
 	transition: all .3s ease;
 	cursor: pointer;
 	position: absolute;
-	top: 1px;
-	left: 1px;
+	top: 2px;
+	left: 2px;
 	z-index: 1;
 	background: #333;
 	-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
@@ -125,5 +133,5 @@ a {
 	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
 }
 .check input[type=checkbox]:checked + label {
-	background:#e74c3c;
+	background:url('checkbox.png');
 }
