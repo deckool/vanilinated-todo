@@ -1,35 +1,43 @@
 function dry(class_,text,done) {
+	var newCheck = document.createElement("div");
+		newCheck.className  = "check";
+		newCheck.id = "theDo"+class_+"l";
 	var newElem= document.createElement("input");
-	newElem.type = "checkbox";
-	newElem.id = "theDo"+class_;
-	newElem.className += class_; 
-	newElem.onclick = validate;
-	var node=document.createElement("li");
-	var textnode=document.createTextNode(text);
-	node.id = 'todo';
-	node.className += class_;
-	node.appendChild(newElem);
+		newElem.type = "checkbox";
+		newElem.id = "theDo"+class_;
+		newElem.className += class_; 
+		newElem.onclick = validate;
+	var newlabel = document.createElement("Label");
+		newlabel.setAttribute("for","theDo"+class_);
+		newlabel.innerHTML = "";
+	newCheck.appendChild(newElem);
+	newCheck.appendChild(newlabel);
+	var node = document.createElement("li");
+	var textnode = document.createTextNode(text);
+		node.id = 'todo';
+		node.className += class_;
+	node.appendChild(newCheck);
 	node.appendChild(textnode);
 	document.getElementById('taskList').appendChild(node);
 	var div = document.createElement('span');
-	div.id = 'image';
-	div.className += class_; 
-	div.onclick = removeText;
+		div.id = 'image';
+		div.className += class_; 
+		div.onclick = removeText;
 	node.appendChild(div);
 		if (done === ""){
 		document.getElementById("theDo"+class_).checked = false;
-		document.getElementById("theDo"+class_).parentNode.setAttribute('rel','');
+		document.getElementById("theDo"+class_+"l").parentNode.setAttribute('rel','');
 		return done === "";
 		}
 		document.getElementById("theDo"+class_).checked = true;
-		document.getElementById("theDo"+class_).parentNode.setAttribute('rel','me');
+		document.getElementById("theDo"+class_+"l").parentNode.setAttribute('rel','meow');
 		return done !== "";
 };
 
 function validate(){
 	var x = this.className;
 	var frm = document.getElementById('theDo'+x);
-	var parent_ = document.getElementById('theDo'+x).parentNode;
+	var parent_ = document.getElementById('theDo'+x+"l").parentNode;
 	var checked = frm.checked;
 	if (!checked){		
 		var scores = localStorage.getItem("highscores");

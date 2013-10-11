@@ -25,11 +25,9 @@ h1 {
 #image {
 	display:block;
 	float:right;
-	width:23px;
-	height:23px;
-	background-image:url('close_button.png');
-	border-radius:50%;
-	box-shadow:0 0 3px #fff;
+	width:22px;
+	height:22px;
+	background-image:url('WindowsCloseButtonBlack.png');
 	cursor:pointer;
 }
 
@@ -40,9 +38,11 @@ ul {
 
 li {
 	padding:5px;
-        -webkit-transition: all 1s ease;
-	-o-transition:all 1s ease;
-	transition:all 1s ease;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	transition: all .3s ease;
 	background:#e74c3c;
 	margin-bottom:3px;
 	font:18px monospace;
@@ -51,6 +51,10 @@ li {
 li[rel="me"] {
 	text-decoration:line-through;
 	background:#2ecc71;
+}
+li[rel="meow"] {
+	text-decoration:line-through;
+	background:#0066ff;
 }
 input {
 	width:100%;
@@ -69,8 +73,7 @@ input:focus {
 	background:#e74c3c;
 }
 input[type="checkbox"] {
-	width:15px;
-	margin-right:5px;
+	display:none;
 }
 ::-webkit-input-placeholder {
    color: rgba(255,255,255,0.7);
@@ -91,4 +94,36 @@ a {
 	text-decoration:none;
 	font:10px monospace;
 	color:red;
+}
+.check {
+	width: 22px;
+	height:22px;
+	background: #fff;
+	margin-right:5px;
+	float:left;
+	border-radius: 50%;
+	position: relative;
+}
+.check label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	transition: all .3s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	z-index: 1;
+	background: #333;
+	-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+.check input[type=checkbox]:checked + label {
+	background:#e74c3c;
 }
