@@ -1,1 +1,50 @@
-Vanilinated project
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>
+            Todo list
+        </title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Megrim" type="text/css">
+        <link rel="stylesheet" href="load.css">
+    </head>
+    <body onload="setLocalStorage()">
+        <div id="container">
+            <header>
+                <a href="#" onclick="localStorage.clear();" id="clear">
+                    Clear all
+                </a>
+                <h1>
+                    Task list
+                </h1>
+                <a href="#" onclick="getDone(&#39;z&#39;)">
+                    Show all
+                </a>
+                <a href="#" onclick="getDone(&#39;&#39;)">
+                    Show completed
+                </a>
+                <a href="#" onclick="getDone(&#39;pr&#39;)">
+                    Show active
+                </a>
+            </header>
+            <section>
+                <form id="form" action="#" autocomplete="off" onsubmit="addText();">
+                    <input type="text" id="input" placeholder="what needs to be done">
+                </form>
+                <ul id="taskList">
+                    
+                </ul>
+            </section>
+            <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fgrooveyourself.ro%2Fgroove%2Ftodo%2F">
+                valid html
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fgrooveyourself.ro%2Fgroove%2Ftodo%2F">
+                Valid css (warning from base 64 background)
+            </a>
+        </div>
+        <script type="text/javascript" src="todo.js">
+            
+        </script>
+    </body>
+</html>
