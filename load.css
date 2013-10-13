@@ -55,6 +55,7 @@ li {
 	margin-bottom:3px;
 	font:18px monospace;
 	color:white;
+	display:block;
 }
 li[rel="me"] {
 	text-decoration:line-through;
