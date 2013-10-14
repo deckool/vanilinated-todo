@@ -18,9 +18,9 @@ draw = docTypeHtml $ do
             H.header $ do
                 H.a H.! A.href "#" H.! A.onclick "localStorage.clear();" H.! A.id "clear" $ "Clear all"
                 H.h1 $ "Task list"
-		H.a H.! A.href "#" H.! A.onclick "getDone('z')" $ "Show all"
+		H.a H.! A.href "#" H.! A.onclick "getDone('x')" $ "Show all"
 		H.a H.! A.href "#" H.! A.onclick "getDone('')" $ "Show completed"
-		H.a H.! A.href "#" H.! A.onclick "getDone('pr')" $ "Show active"
+		H.a H.! A.href "#" H.! A.onclick "getDone('.')" $ "Show active"
             H.section $ do
                 H.form H.! A.id "form" H.! A.action "#" H.! A.autocomplete "off" H.! A.onsubmit "addText();" $ do        
                     H.input H.! A.type_ "text" H.! A.id "input" H.! A.placeholder "what needs to be done"

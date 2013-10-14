@@ -57,13 +57,9 @@ li {
 	color:white;
 	display:block;
 }
-li[rel="me"] {
+.done {
 	text-decoration:line-through;
 	background:#2ecc71;
-}
-li[rel="meow"] {
-	text-decoration:line-through;
-	background:#0066ff;
 }
 input {
 	width:100%;
