@@ -26,14 +26,12 @@ function dry(class_,text,done) {
 	node.appendChild(div);
 		if (done === ""){
 		document.getElementById("theDo"+class_).checked = false;
-		document.getElementById("theDo"+class_+"l").parentNode.setAttribute('rel','');
-		document.querySelector('#theDo'+class_+"l").parentNode.classList.remove('wrap');
+		document.querySelector('#theDo'+class_+"l").parentNode.classList.remove('done');
 		document.querySelector('#theDo'+class_+"l").parentNode.classList.add('active');
 		return done === "";
 		}
 		document.getElementById("theDo"+class_).checked = true;
-		document.getElementById("theDo"+class_+"l").parentNode.setAttribute('rel','meow');
-		document.querySelector('#theDo'+class_+"l").parentNode.classList.add('wrap');
+		document.querySelector('#theDo'+class_+"l").parentNode.classList.add('done');
 		document.querySelector('#theDo'+class_+"l").parentNode.classList.remove('active');
 		return done !== "";
 };
@@ -52,8 +50,7 @@ function validate(){
 				localStorage.setItem("highscores", JSON.stringify(scores));
 		}else{
 		}}
-		parent_.setAttribute('rel', '');
-		document.querySelector('#theDo'+x+"l").parentNode.classList.remove('wrap');
+		document.querySelector('#theDo'+x+"l").parentNode.classList.remove('done');
 		document.querySelector('#theDo'+x+"l").parentNode.classList.add('active');
 		return !checked;
 	} else {
@@ -61,12 +58,11 @@ function validate(){
 		scores = JSON.parse(scores);
 		for (i=0;i<scores.length;i++){
 			if (x == scores[i].time){
-				scores[i].done = "pr";
+				scores[i].done = ".";
 				localStorage.setItem("highscores", JSON.stringify(scores));
 		}else{
 		}}
-		parent_.setAttribute('rel', 'me');
-		document.querySelector('#theDo'+x+"l").parentNode.classList.add('wrap');
+		document.querySelector('#theDo'+x+"l").parentNode.classList.add('done');
 		document.querySelector('#theDo'+x+"l").parentNode.classList.remove('active');
 		return checked;
 		}
@@ -154,6 +150,10 @@ function getDone(y){
 			}
 		}
 };
+
+/*
+Start DRY
+----------
 var $ = function(z) {
 		var scores = localStorage.getItem(z);
 		scores = JSON.parse(scores);
@@ -168,3 +168,4 @@ for (i=0;i<listItems().length;i++){
 	console.log(listItems()[i].toBeDone);
 }
 console.log($('highscores'));
+*/
